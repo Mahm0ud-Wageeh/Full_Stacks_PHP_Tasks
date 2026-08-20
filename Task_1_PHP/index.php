@@ -208,7 +208,7 @@ foreach ($arr1 as $value1) {
 }
 //////////////////////////////////////////////////////////////////////
 
-echo " <br> 12 - Question<br>";
+echo " <br> <br> 12 - Question<br>";
 
 if (isset($_POST['submit'])) {
 
