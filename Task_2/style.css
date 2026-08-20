@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #98d629;
+  --green-dark: #315b12;
+  --ink: #17210f;
+  --muted: #526345;
+  --paper: #ffffff;
+  --soft: #f4f8ed;
+  --border: #dfe8d5;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, "Noto Sans Arabic", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.hero {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.15;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  direction: ltr;
+}
+
+.player-card {
+  direction: rtl;
+  min-width: 0;
+  padding: 24px 18px 22px;
+  text-align: center;
+  background: var(--green);
+  border: 1px solid #86c51d;
+  border-radius: 8px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(49, 91, 18, .16);
+}
+
+.player-photo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: -8px auto 20px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, .8);
+}
+
+.player-card h2 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.divider {
+  display: block;
+  width: 62px;
+  height: 3px;
+  margin: 14px auto;
+  border-radius: 3px;
+  background: var(--green-dark);
+  opacity: .65;
+}
+
+.player-card p {
+  margin: 0;
+  color: #34442b;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .players-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    width: min(100% - 32px, 420px);
+    padding: 32px 0 40px;
+  }
+
+  .hero {
+    margin-bottom: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .players-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .player-card {
+    padding-inline: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-card {
+    transition: none;
+  }
+}
